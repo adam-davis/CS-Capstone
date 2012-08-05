@@ -55,43 +55,6 @@ void FilterBrush::mousePressEvent(QMouseEvent* event, PaintArea *currentPaintAre
 		}
 	}
 
-
-
-	/*Whatchu know bout Beenshams Circle Algorithm? Nothing? Check out wikipedia!
-	int f = 1 - radius;
-	int ddF_x = 1;
-	int ddF_y = -2 * radius;
-	int x = 0;
-	int y = radius;
-	QImage* yup = currentPaintArea->getImage();
-	yup->setPixel(xCenter, yCenter + radius, qRgb(255, 255, 255));
-	yup->setPixel(xCenter, yCenter - radius, qRgb(255, 255, 255));
-	yup->setPixel(xCenter + radius, yCenter, qRgb(255, 255, 255));
-	yup->setPixel(xCenter - radius, yCenter, qRgb(255, 255, 255));
-
-	while(x < y)
-	{
-	ddF_x = 2 * x + 1;
-	ddF_y = -2 * y;
-	f = x*x + y*y - radius*radius + 2*x - y + 1;
-	if(f >= 0) 
-	{
-	y--;
-	ddF_y += 2;
-	f += ddF_y;
-	}
-	x++;
-	ddF_x += 2;
-	f += ddF_x;    
-	yup->setPixel(xCenter + x, yCenter + y, qRgb(255, 255, 255));
-	yup->setPixel(xCenter - x, yCenter + y, qRgb(255, 255, 255));
-	yup->setPixel(xCenter + x, yCenter - y, qRgb(255, 255, 255));
-	yup->setPixel(xCenter - x, yCenter - y, qRgb(255, 255, 255));
-	yup->setPixel(xCenter + y, yCenter + x, qRgb(255, 255, 255));
-	yup->setPixel(xCenter - y, yCenter + x, qRgb(255, 255, 255));
-	yup->setPixel(xCenter + y, yCenter - x, qRgb(255, 255, 255));
-	yup->setPixel(xCenter - y, yCenter - x, qRgb(255, 255, 255));
-	}*/
 	currentPaintArea->update();
 }
 void FilterBrush::mouseMoveEvent(QMouseEvent* event, PaintArea *currentPaintArea)
@@ -154,24 +117,5 @@ void  FilterBrush::mouseReleaseEvent(QMouseEvent *event, PaintArea *currentPaint
 	}
 
 }
-
-void FilterBrush::drawLineTo(const QPoint &endPoint, PaintArea *currentPaintArea)
-{
-	/*QPoint lastPoint = currentPaintArea->getLastPoint();
-	QImage* yup = currentPaintArea->getImage();
-	QPainter painter(yup);
-	const QPen pen(brushColor, brushSize, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
-	painter.setPen(pen);
-
-	painter.drawLine(lastPoint, endPoint);
-	//currentPaintArea->modified = true;
-
-	int rad = (brushSize / 2) + 2;
-	currentPaintArea->update(QRect(lastPoint, endPoint).normalized().adjusted(-rad, -rad, +rad, +rad));
-	currentPaintArea->setLastPoint(endPoint);*/
-
-
-}
-
 
 
